@@ -10,6 +10,9 @@ import events from "./events";
 import "./App.css";
 import {Button } from 'react-bootstrap';
 import MyModal from './components/Modal';
+import records from "./records.json";
+
+
 
 
 
@@ -27,11 +30,22 @@ const localizer = dateFnsLocalizer({
 });
 
 
-const dummy = {
+const dummyData = {
   title: 'Spike1',
   StartDate: new Date('2022-08-03T13:45:00-05:00'),
   endDate: new Date('2022-08-20T14:00:00-05:00'),
-  summary: "summary of spike1"
+  key: "TNP-3880",
+  summary: "Test",
+  netsTicketNumber: "N/A",
+  wirelessTicketNumber: "N/A",
+  assignee: "None",
+  tenantType: "Wireline",
+  stackType: "Infra (Internal use)",
+  site: "Canniff Lab - TOROON12",
+  impactDevices: "No High-Impact Devices",
+  assetName: "Test",
+  wirelessRisk: "P2",
+  wirelineRisk: "RL1",
 }
 
 
@@ -58,13 +72,20 @@ function App(){
 
   return (
     <div className="App">
+      {
+        records.map(record => {
+          return(
+            <div className= "box"> {record.title} </div>
+          )
+        })
+      }
 
     <h1> Unified Calendar</h1>
     <Button variant="primary" onClick={handleShow}> Open Modal</Button>
    <MyModal
    show ={show}
    onHide={handleClose}
-   event = {dummy}
+   event = {dummyData}
    >
 
   </MyModal>
