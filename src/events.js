@@ -45,10 +45,7 @@ export default [
         key:"Susan's Passport Expires",
         StartDate:"2022-08-09T12:45:00-05:00",
         endDate:"2022-08-09T12:45:00-05:00",
-        resource: {
-          userId:"ec1f6076-9fcc-48c6-b0e9-e39dbc29557x",
-          eventType:"visaExtensionWorkPermit"
-          }
+
       },
       {
        key: "TNP-3880",

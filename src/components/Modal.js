@@ -8,20 +8,9 @@ export default function MyModal(props){
   const title = props.event.title;
   const summary = props.event.summary;
 
-   const StartDate = props.event.StartDate;
-  //  const endDate = prp
-  //  const key
-  //  const summary:
-  //  const netsTicketNumber
-  //  const wirelessTicketNumber
-  //  const assignee
-  //  const tenantType
-  //  const stackType
-  //  const site
-  //  const impactDevices
-  //  const assetName
-  //  const wirelessRisk
-  //  const wirelineRisk
+
+  const StartDate = props.event.StartDate.toUTCString();
+  const endDate  = props.event.endDate.toUTCString();
 
     return (
       <Modal
@@ -36,7 +25,7 @@ export default function MyModal(props){
 
       <Modal.Header>
           <Modal.Title id="contained-modal-title-vcenter">
-          <bold> {title} </bold>
+           {title}
           </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -55,8 +44,10 @@ export default function MyModal(props){
               <li> Asset Name: {props.event.impactDevices} </li>
               <li>  Wireless Risk: {props.event.wirelessRisk}</li>
               <li> WirelineRisk: {props.event.wirelineRisk}</li>
+              <li> Date Range : {StartDate} - {endDate}</li>
 
             </ul>
+            <a href="https://www.w3schools.com" >Link to Ticket</a>
 
         </Modal.Body>
       <Modal.Footer>

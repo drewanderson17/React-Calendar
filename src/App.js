@@ -72,13 +72,7 @@ function App(){
 
   return (
     <div className="App">
-      {
-        records.map(record => {
-          return(
-            <div className= "box"> {record.title} </div>
-          )
-        })
-      }
+
 
     <h1> Unified Calendar</h1>
     <Button variant="primary" onClick={handleShow}> Open Modal</Button>
